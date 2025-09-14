@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function Counter() {
-  const [counter, setCounter] = useState(0)
+  const [count, setCount] = useState(0);
+  const [countColor, setCountColor] = useState('');
 
-  return(
+  function increaseByOne() {
+    setCount(count + 1);
+    setCountColor('lightgreen');
+    console.log(countColor);
+  }
+
+  function decreaseByOne() {
+    setCount(count <= 0 ? 0 : count - 1);
+    setCountColor('brown');
+    console.log(countColor);
+  }
+
+  function resetCount() {
+    setCount(count - count);
+    setCountColor('white');
+  }
+
+  return (
     <div>
-      <div>{counter}</div>
-      <button onClick={() => setCounter(counter + 1)}>+1</button>
-      <button onClick={() => setCounter(counter <= 0 ? 0 : counter - 1)}>-1</button> 
-      <button onClick={() => setCounter(counter - counter)}>Reset</button>
+      <p style={{ color: countColor }} className="counter__value">
+        Current value: {count}
+      </p>
+      <button onClick={increaseByOne}>Increment</button>
+      <button onClick={decreaseByOne}>Decrement</button>
+      <button onClick={resetCount}>Reset</button>
     </div>
-  )
+  );
 }
 
-export default Counter
+export default Counter;

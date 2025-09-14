@@ -1,11 +1,11 @@
-import './Button.scss'
+import './Button.scss';
 
-
-function Button({children, onClick, isActive}: any):any {
+function Button({ children, onClick, isActive, ...props }: any): any {
   return (
-    <button className={isActive ? 'active' : ''} onClick={onClick}>{children}</button>
-  )
+    <button {...props} className={isActive ? 'active' : ''} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
-
-export default Button
+export default Button;

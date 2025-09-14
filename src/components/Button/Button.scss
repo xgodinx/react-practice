@@ -9,7 +9,7 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  margin: 0 12px 0 0;
+  margin: 12px;
 }
 
 button:hover {
@@ -22,7 +22,9 @@ button:active {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
-
+button:disabled {
+  cursor: not-allowed;
+}
 .active {
   background-color: steelblue;
 }

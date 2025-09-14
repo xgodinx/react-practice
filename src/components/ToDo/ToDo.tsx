@@ -1,51 +1,45 @@
-import { useState } from "react"
+import { useState } from 'react';
+import Button from '../Button/Button';
 
 function ToDo() {
-  const [task, setTask] = useState('')
-  const [tasks, setTasks] = useState([])
-  console.log(tasks)
+  const [todos, setTodos] = useState([]);
+  const [todoTask, setTodoTask] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if(!task.trim()) return
-    
-    setTasks([...tasks, task])
-    setTask('')
+  // удаление по самому тексту задачи
+  function filterToDo(taskToRemove: any) {
+    setTodos((prev) => prev.filter((item) => item !== taskToRemove));
   }
 
-  const haandleDelete = (index: number) => {
-    setTasks(tasks.filter((_, i) => i !== index))
-  }
-
-  
   return (
-    <div>
-      <form action="#" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          
-          />
+    <section>
+      <input
+        style={{ height: '18px' }}
+        type="text"
+        placeholder="Enter task"
+        value={todoTask}
+        onChange={(event) => setTodoTask(event.target.value)}
+      />
+      <Button
+        onClick={() => {
+          if (todoTask.trim()) {
+            setTodos([...todos, todoTask]);
+            setTodoTask('');
+          }
+        }}
+      >
+        Add Task
+      </Button>
 
-        <button type="submit">
-          Add
-        </button>
-        <button type="button" onClick={() => setTasks([])}>
-          Delete all
-        </button>
-      </form>
       <ul>
-        {tasks.map((item, index) => (
+        {todos.map((item, index) => (
           <li key={index}>
             {item}
-            <button onClick={() => haandleDelete(index)}>Delete</button>
+            <Button onClick={() => filterToDo(item)}>Remove</Button>
           </li>
         ))}
       </ul>
-    </div>
-  )
-
+    </section>
+  );
 }
 
-export default ToDo
+export default ToDo;
