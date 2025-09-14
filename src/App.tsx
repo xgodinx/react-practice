@@ -17,19 +17,19 @@ function App() {
       <Header />
       <NavButtons active={page} click={(current) => setPage(current)} />
 
-      {page === 'projects' ? (
+      {page === 'projects' && (
         <>
           <UserForm />
           <Counter />
           <ToDo />
         </>
-      ) : null}
-      {page === 'landing' ? (
+      )}
+      {page === 'landing' && (
         <>
           <Main />
           <Footer />
         </>
-      ) : null}
+      )}
     </>
   );
 }
