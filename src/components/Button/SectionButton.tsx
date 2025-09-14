@@ -5,7 +5,7 @@ import { differences } from '../Data/Data';
 function SectionButton() {
   const [content, setContent] = useState(null);
 
-  function handleClick(text: string) {
+  function handleClick(text: any) {
     setContent(text);
   }
   return (

@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      <NavButtons active={page} click={(current) => setPage(current)} />
+      <NavButtons active={page} click={(current: any) => setPage(current)} />
 
       {page === 'projects' && (
         <>

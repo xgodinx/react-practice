@@ -1,6 +1,6 @@
 import Button from '../Button/Button';
 
-function NavButtons({ active, click }) {
+function NavButtons({ active, click }: any) {
   return (
     <section style={{ margin: '20px auto', width: '300px' }}>
       <Button
