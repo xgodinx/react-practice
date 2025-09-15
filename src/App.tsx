@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import './App.scss';
 
-import NavButtons from './components/NavigationSection/NavButtons';
-import ToDo from './components/ToDo/ToDo';
-import UserForm from './components/UserForm/UserForm';
-import Counter from './components/Counter/Counter';
-import Form from './components/Form/Form';
-import Toggle from './components/Toggle/Toggle';
-import UserCard from './components/UserCard/UserCard';
+import NavButtons from './components/Base/NavigationSection/NavButtons';
+import ToDo from './components/Tasks/ToDo/ToDo';
+import UserForm from './components/Tasks/UserForm/UserForm';
+import Counter from './components/Tasks/Counter/Counter';
+import Form from './components/Tasks/Form/Form';
+import Toggle from './components/Tasks/Toggle/Toggle';
+import Timer from './components/Tasks/Timer/Timer';
+import Joke from './components/Tasks/Joke/Joke';
 
 import Header from './components/Trio/Header/Header';
 import Main from './components/Trio/Main';
 import Footer from './components/Trio/Footer';
+
+import EffectSection from './components/Base/EffectSection/EffectSection';
 
 function App() {
   const [page, setPage] = useState('');
@@ -23,7 +26,8 @@ function App() {
       {page === 'projects' && (
         <>
           <UserForm />
-          <UserCard user={{ name: 'Dima', age: 25, isOnline: true }} />
+          <Joke />
+          <Timer />
           <Toggle />
           <Counter />
           <ToDo />
@@ -34,6 +38,11 @@ function App() {
         <>
           <Main />
           <Footer />
+        </>
+      )}
+      {page === 'effect' && (
+        <>
+          <EffectSection />
         </>
       )}
     </>

@@ -23,6 +23,11 @@ section {
   }
 }
 
+p {
+  font-size: 22px;
+  color: cornsilk;
+}
+
 input {
   max-width: 200px;
   width: 100%;
@@ -90,4 +95,9 @@ footer {
 .counter__value {
   font-size: 18px;
   color: antiquewhite;
+}
+
+code {
+  font-family: 'Fira Code', Consolas, monospace;
+  font-size: 18px;
 }

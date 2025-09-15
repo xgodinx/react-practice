@@ -17,7 +17,7 @@ function Counter() {
   }
 
   function resetCount() {
-    setCount(count - count);
+    setCount(0);
     setCountColor('white');
   }
 

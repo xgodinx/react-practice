@@ -1,5 +1,5 @@
 import './Form.scss';
-import Button from '../Button/Button';
+import Button from '../../Base/Button/Button';
 import { useState } from 'react';
 function Form() {
   const [name, setName] = useState('');

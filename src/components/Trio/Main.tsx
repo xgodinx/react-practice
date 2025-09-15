@@ -1,5 +1,5 @@
-import SectionButton from '../Button/SectionButton';
-import LoremWay from '../LoremWay/LoremWay';
+import SectionButton from '../Base/Button/SectionButton';
+import LoremWay from '../Base/LoremWay/LoremWay';
 
 function Main() {
   return (

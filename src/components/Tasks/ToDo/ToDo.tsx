@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import Button from '../Button/Button';
+import Button from '../../Base/Button/Button';
 
 function ToDo() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos]: any = useState([]);
   const [todoTask, setTodoTask] = useState('');
 
-  // удаление по самому тексту задачи
   function filterToDo(taskToRemove: any) {
-    setTodos((prev) => prev.filter((item) => item !== taskToRemove));
+    setTodos((prev: any) => prev.filter((item: any) => item !== taskToRemove));
   }
 
   return (
@@ -31,7 +30,7 @@ function ToDo() {
       </Button>
 
       <ul>
-        {todos.map((item, index) => (
+        {todos.map((item: any, index: any) => (
           <li key={index}>
             {item}
             <Button onClick={() => filterToDo(item)}>Remove</Button>
