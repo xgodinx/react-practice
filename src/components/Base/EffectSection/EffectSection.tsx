@@ -16,7 +16,7 @@ function EffectSection() {
 
       <Modal open={modal}>
         <h3>Hello from Modal</h3>
-        <p>
+        <p style={{ color: 'black' }}>
           You will build a small tic-tac-toe game during this tutorial. This
           tutorial does not assume any existing React knowledge. The techniques
           you’ll learn in the tutorial are fundamental to building any React
